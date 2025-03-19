@@ -1,4 +1,4 @@
-package com.example.portfolio_website.service
+package com.example.project_service.service
 
 import CreateProjectRequest
 import ReturnProjectDto

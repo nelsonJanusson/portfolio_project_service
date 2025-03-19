@@ -9,5 +9,5 @@ FROM eclipse-temurin:21
 EXPOSE 8080
 
 RUN mkdir /app
-COPY --from=build /build/libs/*.jar /app/project.jar
-ENTRYPOINT ["java", "-jar","/app/project.jar"]
+COPY --from=build /build/libs/*.jar /app/project_service.jar
+ENTRYPOINT ["java", "-jar","/app/project_service.jar"]

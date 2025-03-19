@@ -1,8 +1,8 @@
-package com.example.portfolio_website.controller
+package com.example.project_service.controller
 
 import CreateProjectRequest
 import ReturnProjectDto
-import com.example.portfolio_website.service.ProjectService
+import com.example.project_service.service.ProjectService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -22,4 +22,5 @@ fun getProjects( ): List<ReturnProjectDto>{
     fun createProject(@RequestBody createProjectRequest: CreateProjectRequest){
          projectService.createProject(createProjectRequest)
     }
+
 }

@@ -1,11 +1,11 @@
-package com.example.portfolio_website
+package com.example.project_service
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class PortfolioWebsiteApplication
+class ProjectServiceApplication
 
 fun main(args: Array<String>) {
-    runApplication<PortfolioWebsiteApplication>(*args)
+    runApplication<ProjectServiceApplication>(*args)
 }

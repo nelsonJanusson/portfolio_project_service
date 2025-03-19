@@ -1,10 +1,10 @@
-package com.example.portfolio_website
+package com.example.project_service
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class PortfolioWebsiteApplicationTests {
+class ProjectServiceApplicationTests {
 
     @Test
     fun contextLoads() {
