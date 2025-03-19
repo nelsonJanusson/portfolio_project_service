@@ -22,5 +22,4 @@ fun getProjects( ): List<ReturnProjectDto>{
     fun createProject(@RequestBody createProjectRequest: CreateProjectRequest){
          projectService.createProject(createProjectRequest)
     }
-
 }
