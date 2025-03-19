@@ -2,10 +2,8 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+    tags:
+      - 'v*'
 
 jobs:
   push_to_registry:
@@ -31,7 +29,9 @@ jobs:
         uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
         with:
           images: nelsonjanusson/portfolio_project
-          tags: portfolio_project_service
+          tags: |
+            project_service-latest                        # Tag as "latest"
+            project_service-${{ github.ref_name }}         # Use Git tag as version (e.g., v1.0.0)
 
       - name: Build and push Docker image
         id: push
