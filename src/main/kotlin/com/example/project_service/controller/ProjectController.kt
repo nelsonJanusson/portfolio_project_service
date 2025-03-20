@@ -23,4 +23,9 @@ fun getProjects( ): List<ReturnProjectDto>{
          projectService.createProject(createProjectRequest)
     }
 
+    @GetMapping("/test")
+    fun test( ): String{
+        return "success"
+    }
+
 }
