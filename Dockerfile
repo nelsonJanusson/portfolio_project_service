@@ -10,4 +10,4 @@ EXPOSE 8080
 
 RUN mkdir /app
 COPY --from=build /build/libs/*.jar /app/project_service.jar
-ENTRYPOINT ["java", "-jar","/app/project_service.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=prod", "-jar","/app/project_service.jar"]

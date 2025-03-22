@@ -1,12 +1,12 @@
 package com.example.project_service.service
 
 import CreateProjectRequest
-import ReturnProjectDto
+import Project
 import org.springframework.stereotype.Service
 
 @Service
 class ProjectService {
-    fun getProjects(): List<ReturnProjectDto>{
+    fun getProjects(): List<Project>{
         return listOf()
     }
 

@@ -1,3 +1,5 @@
 spring:
   application:
     name: project_service
+  profiles:
+    active: dev
