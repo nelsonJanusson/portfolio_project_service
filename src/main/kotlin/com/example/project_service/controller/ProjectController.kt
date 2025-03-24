@@ -23,9 +23,6 @@ class ProjectController(val projectService: ProjectService) {
          projectService.createProject(createProjectRequest)
     }
 
-    @GetMapping("/test")
-    fun test( ): String{
-        return "success"
-    }
+
 
 }
