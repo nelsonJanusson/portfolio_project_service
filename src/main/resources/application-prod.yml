@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgresql-cluster.default.svc.cluster.local:5432/appdata
+    url: jdbc:postgresql://postgresql-cluster.cnpg-system.svc.cluster.local:5432/appdata
     username: baseuser
     password: aDHqf7ghloP=
     driver-class-name: org.postgresql.Driver
