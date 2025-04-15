@@ -3,6 +3,8 @@ plugins {
     id 'org.jetbrains.kotlin.plugin.spring' version '1.9.25'
     id 'org.springframework.boot' version '3.4.3'
     id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.jetbrains.kotlin.plugin.noarg' version '1.9.22' // Add this line
+    id 'org.jetbrains.kotlin.plugin.jpa' version '1.9.22'
 }
 
 group = 'com.example'
@@ -26,6 +28,9 @@ repositories {
 
 dependencies {
 
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.postgresql:postgresql")
+    runtimeOnly("org.postgresql:postgresql")
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
 
@@ -40,7 +45,14 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
 }
+noArg {
+    annotation 'jakarta.persistence.Entity'
+}
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += '-parameters' // to preserve constructor parameter names
+}
 kotlin {
     compilerOptions {
         freeCompilerArgs.addAll '-Xjsr305=strict'
