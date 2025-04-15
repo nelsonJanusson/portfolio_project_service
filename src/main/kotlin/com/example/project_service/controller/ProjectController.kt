@@ -3,13 +3,10 @@ package com.example.project_service.controller
 import CreateProjectRequest
 import Project
 import com.example.project_service.service.ProjectService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
+@CrossOrigin
 @RequestMapping(value = ["/api/projects"])
 class ProjectController(val projectService: ProjectService) {
 
