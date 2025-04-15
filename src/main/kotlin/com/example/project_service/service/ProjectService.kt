@@ -2,18 +2,19 @@ package com.example.project_service.service
 
 import CreateProjectRequest
 import Project
+import com.example.project_service.repository.IProjectRepository
 import com.example.project_service.repository.ProjectRepository
 import org.springframework.stereotype.Service
 import java.util.*
 
 @Service
-class ProjectService (val projectRepository: ProjectRepository) {
+class ProjectService (val projectRepository: ProjectRepository, val iProjectRepository: IProjectRepository) {
     fun getProjects(): List<Project>{
-       return projectRepository.getProjects();
+       return iProjectRepository.findAll().toList();
     }
 
     fun createProject(createProjectRequest: CreateProjectRequest){
-       projectRepository.createProject(
+        iProjectRepository.save(
            Project(UUID.randomUUID(),
                createProjectRequest.title,
                createProjectRequest.link,
